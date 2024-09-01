@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+{%block titulo%} MLB{%endblock%}
+
+{%block nombre%} 
+<div  id="w">
+    <img src="{% static 'images/MLB.jpg' %}" alt="">
+</div>
+{%endblock%}
+
+<br>
+<br>
+
+{%block botones%}
+<div id="futbol" class="btn-group">
+    
+    <button id= btn_inicio>Home Page</button>
+    <script>
+        document.getElementById('btn_inicio').addEventListener('click', function() {
+            window.location.href = "{% url 'index' %}";
+        });
+        </script>  
+
+
+   
+    <button id= btn_partidos>Matches</button>
+    <script>
+        document.getElementById('btn_partidos').addEventListener('click', function() {
+            window.location.href = "{% url 'listar_baseball' %}";
+        });
+        </script>
+
+    <button id= btn_crear_partido>Create Match</button>
+    <script>
+        document.getElementById('btn_crear_partido').addEventListener('click', function() {
+            window.location.href = "{% url 'crear_baseball' %}";
+        });
+        </script>
+
+    <button id= btn_sistemas>Systems Efficiency </button>
+    <script>
+        document.getElementById('btn_sistemas').addEventListener('click', function() {
+            window.location.href = "{% url 'resultados_sistemas_b' %}";
+        });
+        </script>
+
+</div>
+
+{%endblock%}

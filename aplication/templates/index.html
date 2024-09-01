@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+{%block titulo%} Killing the Casinos!{%endblock%}
+
+
+{%block nombre%} 
+<div class="image-container">
+    <img src="{% static 'images/killing.jpg' %}" alt="">
+</div>
+{%endblock%} 
+
+<br>
+<br>
+
+{%block botones%}
+<button id= logout>Log out</button>
+<script>
+    document.getElementById('logout').addEventListener('click', function() {
+        window.location.href = "{% url 'logout' %}";
+    });
+    </script>
+<div id="futbol" class="btn-group">
+   
+      
+    <button id= btn_futbol>SOCCER</button>
+    <script>
+        document.getElementById('btn_futbol').addEventListener('click', function() {
+            window.location.href = "{% url 'futbol' %}";
+        });
+        </script>
+
+    <button id= btn_baseball>MLB</button>
+    <script>
+        document.getElementById('btn_baseball').addEventListener('click', function() {
+            window.location.href = "{% url 'baseball' %}";
+        });
+        </script>
+
+    <button id= btn_NBAP>NBA</button>
+    <script>
+        document.getElementById('btn_NBAP').addEventListener('click', function() {
+            window.location.href = "{% url 'NBA_profecional' %}";
+        });
+        </script>
+
+    <button id= btn_NBAC>NCAAB</button>
+    <script>
+        document.getElementById('btn_NBAC').addEventListener('click', function() {
+            window.location.href = "{% url 'NBA_colegial' %}";
+        });
+        </script>
+
+    <button id= btn_NLFP>NLF</button>
+    <script>
+        document.getElementById('btn_NLFP').addEventListener('click', function() {
+            window.location.href = "{% url 'NLF_profecional' %}";
+        });
+        </script>
+
+    <button id= btn_NLFC>NCAAF</button>
+    <script>
+        document.getElementById('btn_NLFC').addEventListener('click', function() {
+            window.location.href = "{% url 'NLF_colegial' %}";
+        });
+        </script>
+
+    <button id= btn_hockey>NHL</button>
+    <script>
+        document.getElementById('btn_hockey').addEventListener('click', function() {
+            window.location.href = "{% url 'hockey' %}";
+        });
+        </script>
+</div>
+
+{%endblock%}

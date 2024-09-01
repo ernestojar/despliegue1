@@ -1,0 +1,38 @@
+{% load static  %}
+
+<!doctype html>
+<html lang="es">
+      
+      
+      <title>{%block titulo%} {%endblock%}</title>
+      <head >   
+    
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/estilos.css'%}" type="text/css">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script src="{% static 'js/bootstrap2.js' %}"></script>
+      
+        <style>
+            body {
+                background-image: url("{% static 'images/111.jpg' %}");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+            }
+          </style>
+        
+      </head>
+   
+   
+      <body>
+        {%block nombre%} {%endblock%}
+        {%block botones%} {%endblock%}
+      
+
+      </body>
+

@@ -1,0 +1,309 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{%block titulo%}Resultados Sistemas NHL{%endblock%}
+
+{%block contenido%}
+
+<br>
+<br>
+<h1 style="text-align: center;"><strong><u>System Efficiency</u> </strong></h1>
+<br>
+<br>
+<br>
+<div class="btn-group" style="display: flex; justify-content: center;">
+ <a id="a" href="{% url  'hockey' %}"> NHL </a>
+ <a id="a" href="{% url  'listar_hockey' %}">Matches</a>
+ <a href="#miModal" id="a"  role="button" data-bs-toggle="modal">More efficient</a>
+</div>
+<br>
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>VeriBet</u> </strong></h4>
+<br>
+<div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_A_ML }}/{{A_cont}} teams correct, which represet {{A_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_A_SP }}/{{A_cont6}} teams correct, which represet {{A_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_A_Ud }}/{{A_cont1}} teams correct, which represet {{A_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_A_Total }}/{{A_cont5}} teams correct, which represet {{A_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_A_SB }}/{{A_cont2}} teams correct, which represet {{A_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantaje:</strong> got {{cont_A_MA }}/{{A_cont3}} teams correct, which represet {{A_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_A_BB }}/{{A_cont4}} teams correct, which represet {{A_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>Action Network</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_B_ML }}/{{B_cont}} teams correct, which represented {{B_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_B_SP }}/{{B_cont6}} teams correct, which represented {{B_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_B_Ud }}/{{B_cont1}} teams correct, which represented {{B_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_B_Total }}/{{B_cont5}} teams correct, which represented {{B_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_B_SB }}/{{B_cont2}} teams correct, which represented {{B_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_B_MA }}/{{B_cont3}} teams correct, which represented {{B_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_B_BB }}/{{B_cont4}} teams correct, which represented {{B_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>Sports Insights</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_C_ML }}/{{C_cont}} teams correct, which represented {{C_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_C_SP }}/{{C_cont6}} teams correct, which represented {{C_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_C_Ud }}/{{C_cont1}} teams correct, which represented {{C_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_C_Total }}/{{C_cont5}} teams correct, which represented {{C_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_C_SB }}/{{C_cont2}} teams correct, which represented {{C_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_C_MA }}/{{C_cont3}} teams correct, which represented {{C_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_C_BB }}/{{C_cont4}} teams correct, which represented {{C_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>PFF</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_D_ML }}/{{D_cont}} teams correct, which represented {{D_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_D_SP }}/{{D_cont6}} teams correct, which represented {{D_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_D_Ud }}/{{D_cont1}} teams correct, which represented {{D_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_D_Total }}/{{D_cont5}} teams correct, which represented {{D_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_D_SB }}/{{D_cont2}} teams correct, which represented {{D_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_D_MA }}/{{D_cont3}} teams correct, which represented {{D_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_D_BB }}/{{D_cont4}} teams correct, which represented {{D_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>Covers</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_E_ML }}/{{E_cont}} teams correct, which represented {{E_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_E_SP }}/{{E_cont6}} teams correct, which represented {{E_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_E_Ud }}/{{E_cont1}} teams correct, which represented {{E_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_E_Total }}/{{E_cont5}} teams correct, which represented {{E_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_E_SB }}/{{E_cont2}} teams correct, which represented {{E_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_E_MA }}/{{E_cont3}} teams correct, which represented {{E_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_E_BB }}/{{E_cont4}} teams correct, which represented {{E_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>Team Rankings</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_F_ML }}/{{F_cont}} teams correct, which represented {{F_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_F_SP }}/{{F_cont6}} teams correct, which represented {{F_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_F_Ud }}/{{F_cont1}} teams correct, which represented {{F_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_F_Total }}/{{F_cont5}} teams correct, which represented {{F_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_F_SB }}/{{F_cont2}} teams correct, which represented {{F_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_F_MA }}/{{F_cont3}} teams correct, which represented {{F_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_F_BB }}/{{F_cont4}} teams correct, which represented {{F_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>BetQL</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_G_ML }}/{{G_cont}} teams correct, which represented {{G_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_G_SP }}/{{G_cont6}} teams correct, which represented {{G_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_G_Ud }}/{{G_cont1}} teams correct, which represented {{G_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_G_Total }}/{{G_cont5}} teams correct, which represented {{G_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_G_SB }}/{{G_cont2}} teams correct, which represented {{G_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_G_MA }}/{{G_cont3}} teams correct, which represented {{G_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_G_BB }}/{{G_cont4}} teams correct, which represented {{G_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>Odds Jams</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_H_ML }}/{{H_cont}} teams correct, which represented {{H_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_H_SP }}/{{H_cont6}} teams correct, which represented {{H_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_H_Ud }}/{{H_cont1}} teams correct, which represented {{H_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_H_Total }}/{{H_cont5}} teams correct, which represented {{H_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_H_SB }}/{{H_cont2}} teams correct, which represented {{H_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_H_MA }}/{{H_cont3}} teams correct, which represented {{H_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_H_BB }}/{{H_cont4}} teams correct, which represented {{H_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>Scores and Odds</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_I_ML }}/{{I_cont}} teams correct, which represented {{I_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_I_SP }}/{{I_cont6}} teams correct, which represented {{I_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_I_Ud }}/{{I_cont1}} teams correct, which represented {{I_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_I_Total }}/{{I_cont5}} teams correct, which represented {{I_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_I_SB }}/{{I_cont2}} teams correct, which represented {{I_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_I_MA }}/{{I_cont3}} teams correct, which represented {{I_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_I_BB }}/{{I_cont4}} teams correct, which represented {{I_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<h4 style="text-align: center;"><strong><u>Betting on Cash</u> </strong></h4>
+<br>
+<div></div>
+<h5 style="text-align: center;"><strong> Moneyline:</strong> got {{cont_J_ML }}/{{J_cont}} teams correct, which represented {{J_prom}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Spread:</strong> got {{cont_J_SP }}/{{J_cont6}} teams correct, which represented {{J_prom6}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Underdogs:</strong> got {{cont_J_Ud }}/{{J_cont1}} teams correct, which represented {{J_prom1}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Total:</strong> got {{cont_J_Total }}/{{J_cont5}} teams correct, which represented {{J_prom5}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Sharp Bettor:</strong> got {{cont_J_SB }}/{{J_cont2}} teams correct, which represented {{J_prom2}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Monney Advantage:</strong> got {{cont_J_MA }}/{{J_cont3}} teams correct, which represented {{J_prom3}}% accuracy</h5>
+<br>
+<h5 style="text-align: center;"><strong> Best Bets:</strong> got {{cont_J_BB }}/{{J_cont4}} teams correct, which represented {{J_prom4}}% accuracy</h5>
+</div>
+<br>
+<br>
+
+
+
+
+
+<div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">More efficient systems in each variable</h5>
+          <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></a>
+        </div>
+        <div class="modal-body">
+         
+            <div>
+                <h6 style="text-align: center;"><strong> Moneyline:</strong> the <strong>{{ nombre_s }}</strong> with a <strong>{{ mejor_prom_ML}}% success rate</strong> </h6>
+                <br>
+                <h6 style="text-align: center;"><strong> Spread:</strong> the <strong>{{ nombre_s1 }}</strong> with a <strong>{{ mejor_prom_SP}}% success rate</strong> </h6>
+                <br>
+                <h6 style="text-align: center;"><strong> Total:</strong> the <strong>{{ nombre_s2 }}</strong> with a <strong>{{ mejor_prom_T}}% success rate</strong> </h6>
+                <br>
+                <h6 style="text-align: center;"><strong> Underdogs:</strong> the <strong>{{ nombre_s3 }}</strong> with a <strong>{{ mejor_prom_Ud}}% success rate</strong> </h6>
+                <br>
+                <h6 style="text-align: center;"><strong> Sharp Bettor:</strong> the <strong>{{ nombre_s4 }}</strong> with a <strong>{{ mejor_prom_SB}}% success rate</strong> </h6>
+                <br>
+                <h6 style="text-align: center;"><strong> Money Advantage:</strong> the <strong>{{ nombre_s5 }}</strong> with a <strong>{{ mejor_prom_MA}}% success rate</strong> </h6>
+                <br>
+                <h6 style="text-align: center;"><strong> Best Bets:</strong> the <strong>{{ nombre_s6 }}</strong> with a <strong>{{ mejor_prom_BB}}% success rate</strong> </h6>
+                <br>
+             </div>
+            
+
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+{%endblock%}

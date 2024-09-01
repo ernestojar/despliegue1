@@ -1,0 +1,54 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block titulo %}Crear Resultado NBA{% endblock %}
+
+{% block contenido %}
+    <br>
+    <br>
+    <br>
+    <h1 style="display: flex; justify-content: center;"><strong>Add Match Result</strong></h1>
+
+    <form method="post" id="js" name="form">
+        {% csrf_token %}
+        <br>
+        <br>
+        <br>
+
+        <div class="container text-center">
+            <div class="row align-items-start">
+                <div class="col"></div>
+                <div class="col">
+                    <label for="{{ form.resultado.id_for_label }}"><strong>Result</strong></label>
+                    {{ form.resultado|add_class:"form-control" }}
+                </div>
+                <div class="col">
+                    <label for="{{ form.ganador.id_for_label }}"><strong>Winner</strong></label>
+                    <select name="ganador" class="form-control">
+                        {% for opcion in opciones_ganador %}
+                            <option value="{{ opcion }}">{{ opcion }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div style="display: flex; justify-content: center;">
+            <input id="a" type="submit" value="Save">
+            <a id="a" href="{% url  'listar_NBA_profecional' %}">Back</a>
+        </div>
+        <br>
+        {% if form.errors %}
+            <ul class="alert alert-danger">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </form>
+{% endblock %}

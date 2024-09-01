@@ -1,0 +1,678 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{%block titulo%}Informe NBA{%endblock%}
+
+{%block contenido%}
+
+<br>
+<br>
+<h1 style="text-align: center;"><strong><u>MATCH INFORMATION</u> </strong></h1>
+<br>
+<br>
+<br>
+
+
+<div class="container text-center">
+  <div class="row align-items-start">
+
+    <div class="col">
+    </div>
+
+    <div class="col">
+      <h3 ><strong><u>HOME </u> </strong></h1>
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col">
+      <h3 ><strong><u>ALWAYS </u> </strong></h1>
+    </div>
+
+    <div class="col">
+    </div>
+
+  </div>
+</div>
+
+
+
+<br>
+<div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col">
+            <h5></h5>
+      </div>
+
+      <div class="col">
+        <img style="width: 80px; height: auto;" src="{{ equipo_ll.url }}">
+        <br>
+        <br>
+        <br>
+        
+      </div>
+
+      <div class="col">
+        <h5><strong> {{equipo_l}}</strong></h5>
+        <br>
+        <br>
+        <br>
+
+      </div>
+
+      <div class="col">
+        <h4><strong>vs</strong></h4>
+      </div>
+
+      <div class="col">
+        <h5><strong> {{equipo_v}}</strong></h5>
+      </div>
+
+      <div class="col">
+        <img style="width: 80px; height: auto;" src="{{ equipo_vl.url }}">
+        <br>
+        <br>
+        <br>
+        
+          </div>
+          
+      <div class="col">
+            <h5></h5>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+
+
+<div class="container text-center">
+  <div class="row align-items-start">
+    <div class="col">
+
+      <div id="div_con">
+        <h6><strong>Games palyed in the season:</strong></h6>
+        <strong>{{c_j_l}}</strong>
+      </div>
+
+    </div>
+    <div class="col">
+
+      <div id="div_con">
+        <h6><strong>Games won in the season:</strong></h6>
+        <strong>{{cont_l}}</strong>
+        
+    </div>
+    <br>
+
+    </div>
+    <div class="col">
+
+      <div id="div_con">
+      <h6><strong>Home games won:</strong></h6>
+      <strong>{{cont_g_ll}}</strong>
+      </div>
+    </div>
+
+    <div class="col">
+
+      
+
+    </div>
+    <div class="col">
+
+      <div id="div_con">
+      <h6><strong>Games palyed in the season:</strong></h6>
+      <strong>{{c_j_v}}</strong>
+      </div>
+
+    </div>
+    <div class="col">
+
+      <div id="div_con">
+      <h6><strong>Games won in the season:</strong></h6>
+      <strong>{{cont_v}}</strong>
+      </div>     
+
+    </div>
+    <div class="col">
+      <div id="div_con">
+      <h6><strong>Home games won:</strong></h6>
+      <strong>{{cont_g_vl}}</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="container text-center">
+  <div class="row align-items-start">
+
+    <div class="col">
+
+      <div id="div_con">
+      <h6><strong>Home games won:</strong></h6>
+        <strong>{{cont_g_lv}}</strong>
+      </div>
+
+    </div>
+
+    <div class="col">
+
+      <div id="div_con">
+      <h6><strong>Last 10 in the season:</strong></h6>
+      ganados:<strong> {{g_l}}</strong>
+      perdidos:<strong> {{p_l}}</strong>
+      </div>
+
+    </div>
+
+    <div class="col">
+
+
+    </div>
+
+    <div class="col">
+      
+      <div id="div_con">
+      <h6><strong>Home games won:</strong></h6>
+        <strong>{{cont_g_vv}}</strong>
+      </div>
+
+    </div>
+
+    <div class="col">
+
+      <div id="div_con">
+      <h6><strong>Last 10 in the season:</strong></h6>
+        ganados: <strong> {{g_v}}</strong>
+        perdidos: <strong> {{p_v}}</strong>
+      </div>
+
+    </div>
+  
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<h2 style="text-align: center;"><strong><u>AVERAGE OF VARIABLES </u></strong></h2>
+
+
+<br>
+
+
+<div class="container text-center" >
+  <div class="row align-items-start">
+    
+    <div class="col">
+
+      <div class="container text-center" id='div_cont'>
+        <div class="row align-items-start">
+          <h4><strong><u>Moneyline</u></strong></h4>
+          <div class="col">
+           
+            
+      
+            {% if moneline is not None %}
+              {% if moneline != 0  %} 
+              <h6><strong><u>Favorite</u></strong></h6>
+                  
+                 <img style="width: 80px; height: auto;" src="{{ m_logo.url }}">
+                 
+             
+                 
+              {% else %}
+                 {% if es_numero == 1  %}
+                 <h6><strong><u>Equality in Favoritism</u></strong></h6>
+                 <img style="width: 80px; height: auto;" src="{{ m_logo1.url }}">
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <img style="width: 80px; height: auto;" src="{{ m_logo2.url }}">
+                 {% else %} 
+                 <h4><strong>NO DATA</strong> </h4>
+                 {% endif %}
+                 {% endif %}
+            {% endif %}
+          </div>
+      
+          <div class="col">
+      
+            {% if moneline is not None %}
+              {% if moneline != 0 %} 
+                
+                 <p><strong> {{moneline}}/{{cont_t}} systems analyzed</strong> </p>
+                 <p><strong>{{p_moneline}}% average odds</strong> </p>
+                
+              {% else %}
+                 {% if es_numero == 1  %}
+                 <p><strong> {{moneline1}}/{{cont_t}} systems analyzed</strong> </p>
+                 <p><strong> {{p_moneline1}}% average odds</strong></p>
+                 <br>
+                 <br>
+                 <p> <strong>{{moneline2}}/{{cont_t}} systems analyzed </strong></p>
+                 <p><strong> {{p_moneline2}}% average odds</strong> </p>
+                 {% else %} 
+                 <h4><strong></strong> </h4> 
+              
+                  {% endif %}
+              {% endif %}
+            {% endif %}
+      
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col">
+
+      <div class="container text-center"id='div_cont'>
+        <div class="row align-items-start">
+          <h4><strong><u>Best Bets</u></strong></h4>
+          <div class="col">
+           
+            
+            {% if best is not None%}
+              {% if best != 0 %} 
+                 <h6><strong><u>Favorite</u></strong></h6>
+                 <img style="width: 52px; height: auto;" src="{{ b_logo.url }}">
+            
+              {% else %}
+              {% if es_numero6 == 1  %}
+                 <h6><strong><u>Equality in Favoritism</u></strong></h6>
+                 <img style="width: 52px; height: auto;" src="{{ b_logo1.url }}">
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <img style="width: 52px; height: auto;" src="{{ b_logo2.url }}">
+                 {% else %} 
+                 <h4><strong>NO DATA</strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+      
+          <div class="col">
+      
+            {% if best is not None %}
+              {% if best != 0 %} 
+                 <p><strong> {{best}}/{{var_BB}} systems analyzed</strong> </p>
+                 <p><strong>{{p_best}}% average odds</strong> </p>
+      
+              {% else %}
+              {% if es_numero6 == 1  %}
+                 <p><strong> {{best1}}/{{var_BB}} systems analyzed</strong> </p>
+                 <p><strong> {{p_best1}}% average odds</strong></p>
+                 <br>
+                 <br>
+                 <p> <strong>{{best2}}/{{var_BB}} systems analyzed </strong></p>
+                 <p><strong> {{p_best2}}% average odds</strong> </p>
+                 {% else %} 
+                 <h4><strong></strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+      
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="col">
+
+
+      <div class="container text-center" id='div_cont'>
+        <div class="row align-items-start">
+          <h4><strong><u>Underdogs</u></strong></h4>
+          <div class="col">
+           
+            
+      
+            {% if underdogs is not None %}
+              {% if underdogs != 0 %} 
+                 <h6><strong><u>Favorite</u></strong></h6>
+                 <img style="width: 80px; height: auto;" src="{{ u_logo.url }}">
+            
+              {% else %}
+              {% if es_numero3 == 1  %}
+                 <h6><strong><u>Equality in Favoritism</u></strong></h6>
+                 <img style="width: 80px; height: auto;" src="{{ u_logo1.url }}">
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <img style="width: 80px; height: auto;" src="{{ u_logo2.url }}">
+                 {% else %} 
+                 <h4><strong>NO DATA</strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+      
+          <div class="col">
+      
+            {% if underdogs is not None %}
+              {% if underdogs != 0 %} 
+                 <p><strong> {{underdogs}}/{{var_Ud}} systems analyzed</strong> </p>
+                 <p><strong>{{p_underdogs}}% average odds</strong> </p>
+      
+              {% else %}
+              {% if es_numero3 == 1  %}
+
+                 <p><strong> {{underdogs1}}/{{var_Ud}} systems analyzed</strong> </p>
+                 <p><strong> {{p_underdogs1}}% average odds</strong></p>
+                 <br>
+                 <br>
+                 <p> <strong>{{underdogs2}}/{{var_Udt}} systems analyzed </strong></p>
+                 <p><strong> {{p_underdogs2}}% average odds</strong> </p>
+                 {% else %} 
+                 <h4><strong></strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+      
+          </div>
+         
+        </div>
+      </div>
+
+
+    </div>
+
+   
+    
+    <div class="col">
+
+      <div class="container text-center" id='div_cont'>
+        <div class="row align-items-start">
+          <h4><strong><u>Sharp Bettor</u></strong></h4>
+          <div class="col">
+           
+            
+      
+            {% if sharp is not None %}
+              {% if sharp != 0 %} 
+                 <h6><strong><u>Favorite</u></strong></h6>
+                 <img style="width: 80px; height: auto;" src="{{ u_logo.url }}">
+            
+              {% else %}
+              {% if es_numero4 == 1  %}
+                 <h6><strong><u>Equality in Favoritism</u></strong></h6>
+                 <img style="width: 80px; height: auto;" src="{{ u_logo1.url }}">
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <img style="width: 80px; height: auto;" src="{{ u_logo2.url }}">
+                 {% else %} 
+                 <h4><strong>NO DATA</strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+      
+          <div class="col">
+      
+            {% if sharp is not None %}
+              {% if sharp != 0 %} 
+                 <p><strong> {{sharp}}/{{var_SB}} systems analyzed</strong> </p>
+                 <p><strong>{{p_sharp}}% average odds</strong> </p>
+      
+              {% else %}
+              {% if es_numero4 == 1  %}
+                 <p><strong> {{sharp1}}/{{var_SB}} systems analyzed</strong> </p>
+                 <p><strong> {{p_sharp1}}% average odds</strong></p>
+                 <br>
+                 <br>
+                 <p> <strong>{{sharp2}}/{{var_SB}} systems analyzed </strong></p>
+                 <p><strong> {{p_sharp2}}% average odds</strong> </p>
+                 {% else %} 
+                 <h4><strong></strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+      
+          </div>
+         
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+<br>
+
+<div class="container text-center">
+  <div class="row align-items-start">
+
+    <div class="col">
+
+      <div class="container text-center"id='div_cont'>
+        <div class="row align-items-start">
+          <h4><strong><u>Spread</u></strong></h4>
+          <div class="col">
+           
+            
+      
+            {% if spread  is not None%}
+            {% if spread != 0 %} 
+              <h6><strong><u>Favorite</u></strong></h6>
+              <img style="width: 52px; height: auto;" src="{{ p_logo.url }}">
+            
+            {% else %}
+            {% if es_numero2 == 1  %}
+                 <h6><strong><u>Equality in Favoritism</u></strong></h6>
+            <img style="width: 52px; height: auto;" src="{{ p_logo1.url }}">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img style="width: 52px; height: auto;" src="{{ p_logo2.url }}">
+            {% else %} 
+                 <h4><strong>NO DATA</strong> </h4>
+                 {% endif %}
+            {% endif %}
+            {% endif %}
+          </div>
+      
+          <div class="col">
+      
+            {% if spread  is not None%}
+            {% if spread != 0 %} 
+             <p><strong> {{spread}}/{{pq}} systems analyzed</strong> </p>
+             <p><strong>{{d_spread}} average spread</strong> </p>
+             <p><strong>{{p_spread}}% average odds</strong> </p>
+      
+            {% else %}
+            {% if es_numero2 == 1  %}
+            <p><strong> {{spread1}}/{{pq}} systems analyzed</strong> </p>
+            <p><strong>{{d_spread1}} average spread</strong> </p>
+            <p><strong> {{p_spread1}}% average odds</strong></p>
+             <br>
+             <br>
+            <p> <strong>{{spread2}}/{{pq}} systems analyzed </strong></p>
+            <p><strong>{{d_spread2}} average spread</strong> </p>
+            <p><strong> {{p_spread2}}% average odds</strong> </p>
+            {% else %} 
+                 <h4><strong></strong> </h4>
+                 {% endif %}
+            {% endif %}
+            {% endif %}
+      
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col">
+
+      <div class="container text-center"id='div_cont'>
+        <div class="row align-items-start">
+          <h4><strong><u>Money Advantage</u></strong></h4>
+          <div class="col">
+           
+            
+      
+            {% if money is not None %}
+              {% if money != 0 %} 
+                 <h6><strong><u>Favorite</u></strong></h6>
+                 <img style="width: 52px; height: auto;" src="{{ ma_logo.url }}">
+            
+              {% else %}
+              {% if es_numero5 == 1  %}
+                 <h6><strong><u>Equality in Favoritism</u></strong></h6>
+                 <img style="width: 52px; height: auto;" src="{{ ma_logo1.url }}">
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <br>
+                 <img style="width: 52px; height: auto;" src="{{ ma_logo2.url }}">
+                 {% else %} 
+                 <h4><strong>NO DATA</strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+      
+          <div class="col">
+      
+            {% if money is not None %}
+              {% if money != 0 %} 
+                 <p><strong> {{money}}/{{var_MA}} systems analyzed</strong> </p>
+                 <p><strong>{{p_money}}% average odds</strong> </p>
+      
+              {% else %}
+              {% if es_numero5 == 1  %}
+                 <p><strong> {{money1}}/{{var_MA}} systems analyzed</strong> </p>
+                 <p><strong> {{p_money1}}% average odds</strong></p>
+                 <br>
+                 <br>
+                 <p> <strong>{{money2}}/{{var_MA}} systems analyzed </strong></p>
+                 <p><strong> {{p_money2}}% average odds</strong> </p>
+                 {% else %} 
+                 <h4><strong></strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+      
+          </div>
+         
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col">
+
+      <div class="container text-center" id='div_cont'>
+        <div class="row align-items-start">
+          <h4><strong><u>Total</u></strong></h4>
+          <div class="col">
+           
+            
+           
+            {% if total is not None %}
+              {% if total != 0 %} 
+              <h6><strong><u>Favorite</u></strong></h6>
+              <h4><strong>{{under_over}}</strong></h4>
+            
+              {% else %}
+              {% if es_numero1 == 1  %}
+                 <h6><strong><u>Equality in Favoritism</u></strong></h6>
+              <h4><strong>{{under_over1}}</strong></h4>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <h4><strong>{{under_over2}}</strong></h4>
+              {% else %} 
+                 <h4><strong>NO DATA</strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+          </div>
+      
+          <div class="col">
+      
+            {% if total is not None %}
+              {% if total != 0 %} 
+                 <p><strong> {{total}}/{{N}} systems analyzed</strong> </p>
+                 <p><strong> {{d_total}} average </strong> </p>
+                 <p><strong>{{p_total}}% average odds</strong> </p>
+      
+              {% else %}
+              {% if es_numero1 == 1  %}
+                 <p><strong> {{total1}}/{{N}} systems analyzed</strong> </p>
+                 <p><strong> {{d_total1}} average push</strong> </p>
+                 <p><strong> {{p_total1}}% average odds</strong></p>
+                 <br>
+                 <br>
+                 <p> <strong>{{total2}}/{{N}} systems analyzed </strong></p>
+                 <p><strong> {{d_total2}} total average </strong> </p>
+                 <p><strong> {{p_total2}}% average odds</strong> </p>
+                 {% else %} 
+                 <h4><strong></strong> </h4>
+                 {% endif %}
+              {% endif %}
+            {% endif %}
+      
+          </div>
+         
+        </div>
+      </div>
+
+
+
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br>
+<br>
+<div class="btn-group" style="display: flex; justify-content: center;">
+ <a id="a" href="{% url  'NBA_profecional' %}"> NBA </a>
+ <a id="a" href="{% url  'listar_NBA_profecional' %}">Matchs</a>
+</div>
+<br>
+<br>
+<br>
+{%endblock%}

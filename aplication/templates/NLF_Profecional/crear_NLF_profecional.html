@@ -1,0 +1,658 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{%block titulo%}Crear NFL {%endblock%}
+{%block contenido%} 
+<form method="post" id="js" name="formulario">
+    {% csrf_token %}
+    <br>
+    <br>
+    <br>
+    <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <div>
+                <label for="{{ formulario.equipo_local.id_for_label }}"><strong>Home Team</strong></label>
+                {{ formulario.equipo_local }}
+            </div>
+          </div>
+          <div class="col">
+            <div>
+                <label for="{{ formulario.equipo_visitante.id_for_label }}"><strong>Away Team</strong></label>
+                {{ formulario.equipo_visitante }}
+            </div>
+          </div>
+          <div class="col">
+            <div>
+                <label for="{{ formulario.fecha.id_for_label }}"><strong>Date</strong></label>
+                {{ formulario.fecha }}
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>VeriBet</u></strong></h1>
+    </div>
+    
+    <br>
+    
+
+
+    <div class="container text-center">
+        <div class="row">
+         
+          <div class="col">
+            <label for="{{ formulario.A_ML_equip.id_for_label }}"><strong><u>Moneyline</u>  </strong></label> <br><br>
+            <label for="{{ formulario.A_ML_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.A_ML_equip }}
+            <label for="{{ formulario.A_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.A_ML_prob }}    
+          </div>
+          <div class="col">
+            <label for="{{ formulario.A_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+                <label for="{{ formulario.A_SP_equipo.id_for_label }}"><strong>Team:</strong></label>{{ formulario.A_SP_equip }}
+                <label for="{{ formulario.A_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.A_SP_prob }}
+                <label for="{{ formulario.A_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.A_SP_dif }}
+          </div>
+          <div class="col">
+            <label for="{{ formulario.A_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+                <label for="{{ formulario.A_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.A_Total_OU }}
+                <label for="{{ formulario.A_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.A_Total_prob }}
+                <label for="{{ formulario.A_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.A_total_punto }}
+              </div>
+          
+          <div class="col">
+            <label for="{{ formulario.A_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+                <label for="{{ formulario.A_Ud_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.A_Ud_equip }}
+                <label for="{{ formulario.A_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.A_Ud_prob }}
+          </div>
+          <div class="col">
+            <label for="{{ formulario.A_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+            <label for="{{ formulario.A_SB_equip.id_for_label }}"><strong>Team:</strong></label> {{ formulario.A_SB_equip }}
+            <label for="{{ formulario.A_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.A_SB_prob }}
+          </div>
+          <div class="col">
+            <label for="{{ formulario.A_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+            <label for="{{ formulario.A_MA.id_for_label }}"><strong>Team:</strong></label>{{ formulario.A_MA }}
+            <label for="{{ formulario.A_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.A_MA_prob }}
+          </div>
+          
+          <div class="col">
+            <label for="{{ formulario.A_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+            <label for="{{ formulario.A_BB.id_for_label }}"><strong>Team:</strong></label>{{ formulario.A_BB }}
+            <label for="{{ formulario.A_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.A_BB_prob }}
+          </div>
+          </div>
+        
+    </div>
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>Action Network</u></strong></h1>
+    </div>
+    
+    
+    <br>
+
+
+    <div class="container text-center">
+        <div class="row">
+         
+          <div class="col">
+            <label for="{{ formulario.B_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+            <label for="{{ formulario.B_ML_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.B_ML_equip }}
+            <label for="{{ formulario.B_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.B_ML_prob }}    
+          </div>
+          <div class="col">
+            <label for="{{ formulario.B_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+                <label for="{{ formulario.B_SP_equipo.id_for_label }}"><strong>Team:</strong></label>{{ formulario.B_SP_equip }}
+                <label for="{{ formulario.B_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.B_SP_prob }}
+                <label for="{{ formulario.B_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.B_SP_dif }}
+          </div>
+          <div class="col">
+            <label for="{{ formulario.B_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+                <label for="{{ formulario.B_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.B_Total_OU }}
+                <label for="{{ formulario.B_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.B_Total_prob }}
+                <label for="{{ formulario.B_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.B_total_punto }}
+              </div>
+          
+          <div class="col">
+            <label for="{{ formulario.B_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+                <label for="{{ formulario.B_Ud_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.B_Ud_equip }}
+                <label for="{{ formulario.B_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.B_Ud_prob }}
+          </div>
+          <div class="col">
+            <label for="{{ formulario.B_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+            <label for="{{ formulario.B_SB_equip.id_for_label }}"><strong>Team:</strong></label> {{ formulario.B_SB_equip }}
+            <label for="{{ formulario.B_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.B_SB_prob }}
+          </div>
+          <div class="col">
+            <label for="{{ formulario.B_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+            <label for="{{ formulario.B_MA.id_for_label }}"><strong>Team:</strong></label>{{ formulario.B_MA }}
+            <label for="{{ formulario.B_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.B_MA_prob }}
+          </div>
+          <div class="col">
+            <label for="{{ formulario.B_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+            <label for="{{ formulario.B_BB.id_for_label }}"><strong>Team:</strong></label>{{ formulario.B_BB }}
+            <label for="{{ formulario.B_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.B_BB_prob }}
+          </div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>Sports Insights</u></strong></h1>
+    </div>
+    
+    <br>
+
+
+    <div class="container text-center">
+      <div class="row">
+       
+        <div class="col">
+          <label for="{{ formulario.C_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+          <label for="{{ formulario.C_ML_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.C_ML_equip }}
+          <label for="{{ formulario.C_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.C_ML_prob }}    
+        </div>
+        <div class="col">
+          <label for="{{ formulario.C_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+              <label for="{{ formulario.C_SP_equipo.id_for_label }}"><strong>Team:</strong></label>{{ formulario.C_SP_equip }}
+              <label for="{{ formulario.C_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.C_SP_prob }}
+              <label for="{{ formulario.C_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.C_SP_dif }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.C_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+              <label for="{{ formulario.C_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.C_Total_OU }}
+              <label for="{{ formulario.C_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.C_Total_prob }}
+              <label for="{{ formulario.C_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.C_total_punto }}
+            </div>
+        
+        <div class="col">
+          <label for="{{ formulario.C_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+              <label for="{{ formulario.C_Ud_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.C_Ud_equip }}
+              <label for="{{ formulario.C_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.C_Ud_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.C_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+          <label for="{{ formulario.C_SB_equip.id_for_label }}"><strong>Team:</strong></label> {{ formulario.C_SB_equip }}
+          <label for="{{ formulario.C_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.C_SB_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.C_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+          <label for="{{ formulario.C_MA.id_for_label }}"><strong>Team:</strong></label>{{ formulario.C_MA }}
+          <label for="{{ formulario.C_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.C_MA_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.C_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+          <label for="{{ formulario.C_BB.id_for_label }}"><strong>Team:</strong></label>{{ formulario.C_BB }}
+          <label for="{{ formulario.C_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.C_BB_prob }}
+        </div>
+
+      </div>
+  </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>PFF</u></strong></h1>
+    </div>
+    
+    <br>
+
+
+    <div class="container text-center">
+      <div class="row">
+       
+        <div class="col">
+          <label for="{{ formulario.D_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+          <label for="{{ formulario.D_ML_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.D_ML_equip }}
+          <label for="{{ formulario.D_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.D_ML_prob }}    
+        </div>
+        <div class="col">
+          <label for="{{ formulario.D_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+              <label for="{{ formulario.D_SP_equipo.id_for_label }}"><strong>Team:</strong></label>{{ formulario.D_SP_equip }}
+              <label for="{{ formulario.D_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.D_SP_prob }}
+              <label for="{{ formulario.D_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.D_SP_dif }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.D_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+              <label for="{{ formulario.D_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.D_Total_OU }}
+              <label for="{{ formulario.D_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.D_Total_prob }}
+              <label for="{{ formulario.D_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.D_total_punto }}
+            </div>
+        
+        <div class="col">
+          <label for="{{ formulario.C_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+              <label for="{{ formulario.C_Ud_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.D_Ud_equip }}
+              <label for="{{ formulario.C_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.D_Ud_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.D_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+          <label for="{{ formulario.D_SB_equip.id_for_label }}"><strong>Team:</strong></label> {{ formulario.D_SB_equip }}
+          <label for="{{ formulario.D_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.D_SB_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.D_MA.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+          <label for="{{ formulario.D_MA.id_for_label }}"><strong>Team:</strong></label>{{ formulario.D_MA }}
+          <label for="{{ formulario.D_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.D_MA_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.D_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+          <label for="{{ formulario.D_BB.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.D_BB }}
+          <label for="{{ formulario.D_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.D_BB_prob }}
+        </div>
+
+      </div>
+  </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>Covers</u></strong></h1>
+    </div>
+    
+    <br>
+
+
+    <div class="container text-center">
+      <div class="row">
+       
+        <div class="col">
+          <label for="{{ formulario.E_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+          <label for="{{ formulario.E_ML_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.E_ML_equip }}
+          <label for="{{ formulario.E_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.E_ML_prob }}    
+        </div>
+        <div class="col">
+          <label for="{{ formulario.E_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+              <label for="{{ formulario.E_SP_equipo.id_for_label }}"><strong>Team:</strong></label>{{ formulario.E_SP_equip }}
+              <label for="{{ formulario.E_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.E_SP_prob }}
+              <label for="{{ formulario.E_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.E_SP_dif }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.E_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+              <label for="{{ formulario.E_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.E_Total_OU }}
+              <label for="{{ formulario.E_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.E_Total_prob }}
+              <label for="{{ formulario.E_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.E_total_punto }}
+            </div>
+        
+        <div class="col">
+          <label for="{{ formulario.E_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+              <label for="{{ formulario.E_Ud_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.E_Ud_equip }}
+              <label for="{{ formulario.E_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.E_Ud_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.E_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+          <label for="{{ formulario.E_SB_equip.id_for_label }}"><strong>Team:</strong></label> {{ formulario.E_SB_equip }}
+          <label for="{{ formulario.E_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.E_SB_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.E_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+          <label for="{{ formulario.E_MA.id_for_label }}"><strong>Team:</strong></label>{{ formulario.E_MA }}
+          <label for="{{ formulario.E_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.E_MA_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.E_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+          <label for="{{ formulario.E_BB.id_for_label }}"><strong>Team:</strong></label>{{ formulario.E_BB }}
+          <label for="{{ formulario.E_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.E_BB_prob }}
+        </div>
+
+      </div>
+  </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>Team Rankings</u></strong></h1>
+    </div>
+    
+    <br>
+
+
+    <div class="container text-center">
+      <div class="row">
+       
+        <div class="col">
+          <label for="{{ formulario.F_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+          <label for="{{ formulario.F_ML_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.F_ML_equip }}
+          <label for="{{ formulario.F_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.F_ML_prob }}    
+        </div>
+        <div class="col">
+          <label for="{{ formulario.F_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+              <label for="{{ formulario.F_SP_equipo.id_for_label }}"><strong>Team:</strong></label>{{ formulario.F_SP_equip }}
+              <label for="{{ formulario.F_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.F_SP_prob }}
+              <label for="{{ formulario.F_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.F_SP_dif }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.F_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+              <label for="{{ formulario.F_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.F_Total_OU }}
+              <label for="{{ formulario.F_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.F_Total_prob }}
+              <label for="{{ formulario.F_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.F_total_punto }}
+            </div>
+        
+        <div class="col">
+          <label for="{{ formulario.F_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+              <label for="{{ formulario.F_Ud_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.F_Ud_equip }}
+              <label for="{{ formulario.F_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.F_Ud_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.F_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+          <label for="{{ formulario.F_SB_equip.id_for_label }}"><strong>Team:</strong></label> {{ formulario.F_SB_equip }}
+          <label for="{{ formulario.F_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.F_SB_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.F_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+          <label for="{{ formulario.F_MA.id_for_label }}"><strong>Team:</strong></label>{{ formulario.F_MA }}
+          <label for="{{ formulario.F_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.F_MA_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.F_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+          <label for="{{ formulario.F_BB.id_for_label }}"><strong>Team:</strong></label>{{ formulario.F_BB }}
+          <label for="{{ formulario.F_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.F_BB_prob }}
+        </div>
+
+      </div>
+  </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>BetQL</u></strong></h1>
+    </div>
+    
+    <br>
+
+
+    <div class="container text-center">
+      <div class="row">
+       
+        <div class="col">
+          <label for="{{ formulario.G_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+          <label for="{{ formulario.G_ML_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.G_ML_equip }}
+          <label for="{{ formulario.G_ML_prob.id_for_label }}"><strong>Probabilidad:</strong></label>{{ formulario.G_ML_prob }}    
+        </div>
+        <div class="col">
+          <label for="{{ formulario.G_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+              <label for="{{ formulario.G_SP_equipo.id_for_label }}"><strong>Team:</strong></label>{{ formulario.G_SP_equip }}
+              <label for="{{ formulario.G_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.G_SP_prob }}
+              <label for="{{ formulario.G_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.G_SP_dif }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.G_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+              <label for="{{ formulario.G_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.G_Total_OU }}
+              <label for="{{ formulario.G_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.G_Total_prob }}
+              <label for="{{ formulario.G_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.G_total_punto }}
+            </div>
+        
+        <div class="col">
+          <label for="{{ formulario.C_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+              <label for="{{ formulario.G_Ud_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.G_Ud_equip }}
+              <label for="{{ formulario.C_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.G_Ud_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.G_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+          <label for="{{ formulario.G_SB_equip.id_for_label }}"><strong>Team:</strong></label> {{ formulario.G_SB_equip }}
+          <label for="{{ formulario.G_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.G_SB_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.G_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+          <label for="{{ formulario.G_MA.id_for_label }}"><strong>Team:</strong></label>{{ formulario.G_MA }}
+          <label for="{{ formulario.G_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.G_MA_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.G_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+          <label for="{{ formulario.G_BB.id_for_label }}"><strong>Team:</strong></label>{{ formulario.G_BB }}
+          <label for="{{ formulario.G_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.G_BB_prob }}
+        </div>
+
+      </div>
+  </div>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>Odds Jams</u></strong></h1>
+    </div>
+    
+    <br>
+
+
+    <div class="container text-center">
+      <div class="row">
+       
+        <div class="col">
+          <label for="{{ formulario.H_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+          <label for="{{ formulario.H_ML_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.H_ML_equip }}
+          <label for="{{ formulario.H_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.H_ML_prob }}    
+        </div>
+        <div class="col">
+          <label for="{{ formulario.H_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+              <label for="{{ formulario.H_SP_equipo.id_for_label }}"><strong>Team:</strong></label>{{ formulario.H_SP_equip }}
+              <label for="{{ formulario.H_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.H_SP_prob }}
+              <label for="{{ formulario.H_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.H_SP_dif }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.B_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+              <label for="{{ formulario.H_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.H_Total_OU }}
+              <label for="{{ formulario.H_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.H_Total_prob }}
+              <label for="{{ formulario.H_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.H_total_punto }}
+            </div>
+        
+        <div class="col">
+          <label for="{{ formulario.H_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+              <label for="{{ formulario.H_Ud_equip.id_for_label }}"><strong>Team:</strong></label>{{ formulario.H_Ud_equip }}
+              <label for="{{ formulario.H_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.H_Ud_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.H_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+          <label for="{{ formulario.H_SB_equip.id_for_label }}"><strong>Team:</strong></label> {{ formulario.H_SB_equip }}
+          <label for="{{ formulario.H_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.H_SB_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.H_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+          <label for="{{ formulario.H_MA.id_for_label }}"><strong>Team:</strong></label>{{ formulario.H_MA }}
+          <label for="{{ formulario.H_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.H_MA_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.H_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+          <label for="{{ formulario.H_BB.id_for_label }}"><strong>Team:</strong></label>{{ formulario.H_BB }}
+          <label for="{{ formulario.H_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.H_BB_prob }}
+        </div>
+
+      </div>
+  </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>Scores and Odds</u></strong></h1>
+    </div>
+    
+    <br>
+
+
+    <div class="container text-center">
+      <div class="row">
+       
+        <div class="col">
+          <label for="{{ formulario.I_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+          <label for="{{ formulario.I_ML_equip.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.I_ML_equip }}
+          <label for="{{ formulario.I_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.I_ML_prob }}    
+        </div>
+        <div class="col">
+          <label for="{{ formulario.I_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+              <label for="{{ formulario.I_SP_equipo.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.I_SP_equip }}
+              <label for="{{ formulario.I_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.I_SP_prob }}
+              <label for="{{ formulario.I_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.I_SP_dif }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.B_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+              <label for="{{ formulario.I_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.I_Total_OU }}
+              <label for="{{ formulario.I_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.I_Total_prob }}
+              <label for="{{ formulario.I_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.I_total_punto }}
+            </div>
+        
+        <div class="col">
+          <label for="{{ formulario.I_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+              <label for="{{ formulario.I_Ud_equip.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.I_Ud_equip }}
+              <label for="{{ formulario.C_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.I_Ud_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.I_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+          <label for="{{ formulario.I_SB_equip.id_for_label }}"><strong>Equipo:</strong></label> {{ formulario.I_SB_equip }}
+          <label for="{{ formulario.I_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.I_SB_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.I_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+          <label for="{{ formulario.I_MA.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.I_MA }}
+          <label for="{{ formulario.I_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.I_MA_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.I_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+          <label for="{{ formulario.I_BB.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.I_BB }}
+          <label for="{{ formulario.I_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.I_BB_prob }}
+        </div>
+
+      </div>
+  </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="container text-center">
+        <h1><strong><u>Betting on Cash</u></strong></h1>
+    </div>
+    
+    <br>
+
+
+    <div class="container text-center">
+      <div class="row">
+       
+        <div class="col">
+          <label for="{{ formulario.J_ML_equip.id_for_label }}"><strong><u>Moneline</u>  </strong></label> <br><br>
+          <label for="{{ formulario.J_ML_equip.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.J_ML_equip }}
+          <label for="{{ formulario.J_ML_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.J_ML_prob }}    
+        </div>
+        <div class="col">
+          <label for="{{ formulario.J_SP.id_for_label }}"><strong><u>Spread</u></strong></label><br><br>
+              <label for="{{ formulario.J_SP_equipo.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.J_SP_equip }}
+              <label for="{{ formulario.J_SP_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.J_SP_prob }}
+              <label for="{{ formulario.J_SP_dif.id_for_label }}"><strong>Spread value:</strong></label>{{ formulario.J_SP_dif }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.B_Total_OU.id_for_label }}"><strong><u>Total</u></strong></label><br><br>
+              <label for="{{ formulario.J_Total_OU.id_for_label }}"><strong>Under/Over:</strong></label>{{ formulario.J_Total_OU }}
+              <label for="{{ formulario.J_Total_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.J_Total_prob }}
+              <label for="{{ formulario.J_Total_punto.id_for_label }}"><strong>Value:</strong></label>{{ formulario.J_total_punto }}
+            </div>
+        
+        <div class="col">
+          <label for="{{ formulario.J_Ud_equip.id_for_label }}"><strong><u>Underdogs</u></strong></label><br><br>
+              <label for="{{ formulario.J_Ud_equip.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.J_Ud_equip }}
+              <label for="{{ formulario.J_Ud_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.J_Ud_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.J_SB_equip.id_for_label }}"><strong><u>Sharp Bettor</u></strong></label><br><br>
+          <label for="{{ formulario.J_SB_equip.id_for_label }}"><strong>Equipo:</strong></label> {{ formulario.J_SB_equip }}
+          <label for="{{ formulario.J_SB_prob.id_for_label }}"><strong>Probability:</strong></label> {{ formulario.J_SB_prob }}
+        </div>
+        <div class="col">
+          <label for="{{ formulario.J_MA_.id_for_label }}"><strong><u>Money Adv.</u></strong></label><br><br>
+          <label for="{{ formulario.J_MA.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.J_MA }}
+          <label for="{{ formulario.J_MA_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.J_MA_prob }}
+          
+        </div>
+        <div class="col">
+          <label for="{{ formulario.J_BB.id_for_label }}"><strong><u>Best Bets</u></strong></label><br><br>
+          <label for="{{ formulario.J_BB.id_for_label }}"><strong>Equipo:</strong></label>{{ formulario.J_BB }}
+          <label for="{{ formulario.J_BB_prob.id_for_label }}"><strong>Probability:</strong></label>{{ formulario.J_BB_prob }}
+        </div>
+
+      </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+    <div class="button-container">
+      <a id="a" href="{% url  'NLF_profecional' %}">Back</a>
+      <input id="a" type="submit" value="Save">
+    </div>
+
+  <br>
+  <br>
+  <br>
+
+  {% if formulario.errors %}
+<div id="error-messages" class="alert alert-danger">
+    <!-- Mostrar errores generales -->
+    {% if formulario.non_field_errors %}
+    {% for error in formulario.non_field_errors %}
+        <p><strong>Error General:</strong> {{ error }}</p>
+    {% endfor %}
+    {% endif %}
+    
+    <!-- Mostrar errores de campos específicos -->
+    {% for field in formulario %}
+        {% if field.errors %}
+        <div>
+            <strong>{{ field.label }}:</strong>
+            {% for error in field.errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+
+</form>
+
+{%endblock%}

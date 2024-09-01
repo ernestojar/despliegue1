@@ -1,0 +1,27 @@
+{% load static  %}
+
+<!doctype html>
+<html lang="es">
+      
+      
+      <title>{%block titulo%} {%endblock%}</title>
+      <head >   
+    
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/estilos.css'%}" type="text/css">
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js' %}"></script>
+        <script src="{% static 'js/bootstrap2.js' %}"></script>
+        <script src="{% static 'js/estilos.js' %}"></script>
+        
+      </head>
+   
+   
+      <body id="body">
+        {%block contenido%} {%endblock%}
+        
+      
+
+      </body>
+

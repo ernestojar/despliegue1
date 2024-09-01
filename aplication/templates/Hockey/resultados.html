@@ -1,0 +1,59 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{%block titulo%}Lista partidos de Hockey{%endblock%}
+
+
+{%block contenido%}
+<br>
+<br>
+<br>
+
+<div id="btn-group2" class="btn-group">
+    <a id="a" href="{% url  'index' %}"> Home </a>
+    <a id="a" href="{% url  'listar_hockey' %}">Back</a>
+    <a id="a" href="{% url  'hockey' %}">NHL</a>
+</div>
+
+<br>
+<br>
+<br>
+
+    <h1 style="text-align: center;"><strong><u> SEARCH RESULT</u></strong></h1>
+
+<br>
+<br>
+<br>
+<div class="container d-flex justify-content-center" style="height: 100vh;">
+<table class="table table-success table-striped" style="width:100%;">
+    
+    {%if resultados%}
+<tr>
+   
+    <td><strong>TEAMS</strong></td>
+    <td><strong>DATE</strong></td>
+    <td><strong>RESULT</strong></td>
+    <td><strong>WINNER</strong></td>
+    <td><strong>DETAILS</strong></td>
+    <td><strong>ADD RESULT</strong></td>
+    <td><strong>DELETE</strong></td>
+</tr>
+{%for o in resultados%}
+ 
+<tr>
+   
+    <td>{{o.equipo_local}}   vs.   {{o.equipo_visitante}}</td>
+    <td>{{o.fecha}}</td>
+    <td>{{o.resultado|default:"-----------"}} </td>
+    <td>{{o.ganador|default:"-----------"}}</td>
+    <td><a class="btn btn-dark" href="{%url 'informe_resultado_h' o.id %}">Details</a></td>
+    <td><a class="btn btn-dark" href="{%url 'resultado_hockey' o.id %}">Add Result</a></td>
+    <td><a class="btn btn-danger" href="{%url 'eliminar_hockey' o.id %}">Delete</a></td>
+</tr>
+ 
+{% endfor %}
+{%else%}
+</div>
+<h2>NO DATA</h2>
+{% endif %}
+{%endblock%}

@@ -1,0 +1,329 @@
+.image-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 20vh; /* Altura total de la ventana */
+  
+   
+}
+
+img {
+  max-width: 50%; /* Ajusta el ancho máximo a 80% del contenedor padre */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  border-radius: 40px;
+}
+
+button {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  border: none;
+  background: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+button::before {
+  margin-left: auto;
+}
+
+button::after, button::before {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  transition: 0.5s;
+}
+
+button:hover::after, button:hover::before {
+  width: 100%;
+}
+
+
+
+#futbol {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 20px; /* Añade espacio entre los botones */
+  margin-top: 50px; /* Ajusta este valor según sea necesario para centrar verticalmente */
+  padding: 0; /* Remueve el padding predeterminado de los botones */
+}
+
+
+#futbol button {
+  padding: 5px; /* Remueve el padding predeterminado */
+  margin: 10px; /* Remueve el margen predeterminado */
+  border: none; /* Remueve el borde predeterminado */
+  outline: none; /* Remueve el contorno predeterminado */
+  cursor: pointer; /* Cambia el cursor a puntero al pasar el mouse */
+}
+#futbol button {
+  height: 40px; /* Ajusta este valor según sea necesario */
+}
+
+#futbol button {
+    font-family: 'Cursiva'; /* Arial será utilizado si está disponible, de lo contrario, se usará cualquier fuente sans-serif disponible */
+}
+
+
+
+/* styles.css */
+.select-field {
+  width: 350px; /* Ajusta el ancho según sea necesario */
+}
+
+#body {
+  background-color: rgb(153, 179, 174); /* Cambia el color de fondo a azul claro */
+  font-family: Arial, sans-serif; /* Cambia la familia de fuentes a Arial */
+}
+#body1 {
+  background-color: rgb(218, 246, 240); /* Cambia el color de fondo a azul claro */
+  font-family: Arial, sans-serif; /* Cambia la familia de fuentes a Arial */
+}
+
+#guardar{
+  
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #3c5160;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+#guardar:hover {
+    background-color: #212a30;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+  }
+  
+#guardar:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
+
+#guardar {
+    margin-left: auto; /* Empuja el botón hacia la derecha */
+  }
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+  }
+  
+
+  
+#a{
+  
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #3c5160;
+  color: #ffffff;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  text-decoration: none;
+}
+
+#a:hover {
+  background-color: #212a30;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+  
+}
+
+#a:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+
+
+
+
+#b {
+  --color: #000000;
+  font-family: inherit;
+  display: inline-flex; /* Cambio para usar Flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  width: 6em;
+  height: 2.6em;
+  line-height: 2.5em; /* Ajusta para que el texto esté centrado verticalmente */
+  overflow: hidden;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 3px solid var(--color); /* Aumenta el grosor del borde */
+  border-radius: 6px;
+  position: relative;
+  text-decoration: none;
+  font-weight: bold; /* Hace el texto más grueso */
+}
+
+#b::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+#b:hover {
+  color: white;
+}
+
+#b:before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+#b:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
+
+
+#query {
+  font-family: "Montserrat", sans-serif;
+  width: 20%;
+  height: 45px;
+  padding-left: 2.5rem;
+  box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+  border: 0;
+  border-radius: 12px;
+  background-color: #16171d;
+  outline: none;
+  color: #fafafd;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: text;
+  z-index: 0;
+}
+
+#query::placeholder {
+  color: #ffffff;
+}
+
+#query:hover {
+  box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+}
+
+#query:active {
+  transform: scale(0.95);
+}
+
+#query:focus {
+  box-shadow: 0 0 0 2.5px #2f303d;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  fill: #fdfdfd;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+#btn-group2 {
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: px; /* Añade espacio entre los botones */
+  margin-top: 0px; /* Ajusta este valor según sea necesario para centrar verticalmente */
+  padding: 0; /* Remueve el padding predeterminado de los botones */
+}
+
+#btn-group2 div  {
+  margin-left: 150px;
+}
+
+
+#error-messages {
+  position: fixed; /* Posiciona el contenedor en relación con la ventana del navegador */
+  top: 0; /* Coloca el contenedor en la parte superior */
+  width: 100%; /* Hace que el contenedor ocupe toda el ancho de la pantalla */
+  z-index: 9999; /* Asegura que el contenedor esté por encima de otros elementos */
+}
+
+
+#bt-busc {
+  cursor: pointer; /* Cambia el cursor a puntero */
+  
+}
+
+.rojo { background-color: rgb(230, 79, 79);
+   border: 1px solid black;
+   text-align: center; /* Centra el texto horizontalmente */
+   vertical-align: middle; /* Centra el texto verticalmente */
+  }
+.verde { background-color: rgb(35, 202, 35);
+   border: 1px solid black;
+   text-align: center; /* Centra el texto horizontalmente */
+   vertical-align: middle; /* Centra el texto verticalmente */
+  }
+  .gris { background-color: rgb(161, 163, 161);
+    border: 1px solid black;
+    text-align: center; /* Centra el texto horizontalmente */
+    vertical-align: middle; /* Centra el texto verticalmente */
+   }
+
+
+  #div_con{ 
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10%;
+    background-color: #76cdf9;
+  }
+
+
+  #div_cont{
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10%;
+
+  }
+
+
+#w{ 
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 20vh; /* Altura total de la ventana */
+    
+  }
+
+
+.celda-fija {
+    min-height: 50px; /* Altura mínima */
+    max-height: 50px; /* Altura máxima */
+    overflow: hidden; /* Opcional: si quieres ocultar el contenido que exceda la altura */
+}
+
+
